@@ -1,4 +1,8 @@
 class ProjectsController < ApplicationController
+
+  #require the administrator to authenticate themselves before they can add/edit/remove projects
+  before_action :authenticate_admin!, :except => [:index, :show]
+
   before_action :set_project, only: %i[ show edit update destroy ]
 
   # GET /projects or /projects.json

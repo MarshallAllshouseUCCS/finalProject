@@ -10,3 +10,11 @@ before_install:
 
 script:
  - bundle exec rspec
+ 
+deploy:
+ provider: heroku
+ api_key: 2112f86a-a2c5-4f99-90e9-438027b91d1c
+ app: fierce-wildwood-87197
+ run: "rake db:migrate"
+ on:
+  all_branches: true
