@@ -32,3 +32,6 @@
 
 #Ignore the coverage directory
 /coverage/
+
+#TESTING IGNORING .travis.yml
+/.travis.yml
