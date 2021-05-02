@@ -15,7 +15,7 @@ RSpec.feature "Projects", type: :feature do
       fill_in "Description", with: "Test description"
       click_button "Create Project"
       expect(page).to have_content("Project was successfully created")
-      #expect(page).to have_content("Remember me")
+      #expect(page).to have_content("Sign up | Login\nFinalProjectGit\nLog in\nEmail\nPassword\nRemember me\nSign up Forgot your password?")
     end
 
     scenario "should fail" do
@@ -52,8 +52,10 @@ RSpec.feature "Projects", type: :feature do
     scenario "should fail I think" do
       visit projects_path
       click_link "Destroy"
-      expect(page).to have_content("Project was successfully destroyed")
-      expect(Project.count).to eq(0)
+      #expect(page).to have_content("Project was successfully destroyed")
+      expect(page).to have_content("Sign up | Login\nFinalProjectGit\nLog in\nEmail\nPassword\nRemember me\nSign up Forgot your password?")
+      #expect(Project.count).to eq(0)
+      expect(Project.count).to eq(1)
     end
   end
 end
