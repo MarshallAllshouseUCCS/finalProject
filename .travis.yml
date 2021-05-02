@@ -13,7 +13,7 @@ script:
  
 deploy:
  provider: heroku
- api_key: ff134944-2921-4600-a779-81c24d43fd9e
+ api_key: 60bd2bd5-64de-49a0-a025-cc458f656cec
  app: fierce-wildwood-87197
  run: "rake db:migrate"
  on:
