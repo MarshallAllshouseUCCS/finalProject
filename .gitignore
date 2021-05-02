@@ -44,5 +44,3 @@ travis.yml
 
 #TESTING IGNORING .travis.yml
 /.travis.yml
-
-#TESTING COMMENT
