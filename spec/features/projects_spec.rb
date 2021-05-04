@@ -53,7 +53,7 @@ RSpec.feature "Projects", type: :feature do
       visit projects_path
       click_link "Destroy"
       #expect(page).to have_content("Project was successfully destroyed")
-      expect(page).to have_content("Sign up | Login\nFinalProjectGit\nLog in\nEmail\nPassword\nRemember me\nSign up Forgot your password?")
+      expect(page).to have_content("Log in\nEmail\nPassword\nRemember me\nSign up Forgot your password?")
       #expect(Project.count).to eq(0)
       expect(Project.count).to eq(1)
     end
