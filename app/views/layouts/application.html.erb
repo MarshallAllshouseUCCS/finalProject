@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-  
-    <p class="navbar-text float-right">
-      <% if admin_signed_in? %>
-        Logged in as <strong><%= current_admin.email %></strong>.
-        <%= link_to 'Edit profile', edit_admin_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
-      <% else %>
-        <%= link_to "Sign up", new_admin_registration_path, :class => 'navbar-link'  %> |
-        <%= link_to "Login", new_admin_session_path, :class => 'navbar-link'  %>
-      <% end %>
-    </p>
-
-    <title>🗑️🔥 CS3300 Final Project 🗑️🔥</title>
-    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    
+    <title>🗑️🔥 CS3300 Final Project 🗑️🔥</title>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <%= link_to 'Home', projects_path, :class => 'nav-item nav-link active'  %>
+          <% if admin_signed_in? %>
+            Logged in as: <strong><%= current_admin.email %></strong>
+            <%= link_to 'Edit profile', edit_admin_registration_path, :class => 'nav-item nav-link'  %>
+            <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'nav-item nav-link'  %>
+          <% else %>
+            <%= link_to 'Sign up', new_admin_registration_path, :class => 'nav-item nav-link'  %>
+            <%= link_to 'Login', new_admin_session_path, :class => 'nav-item nav-link'  %>
+          <% end %>
+          <a class="nav-item nav-link" href="https://www.youtube.com/watch?v=Lrj2Hq7xqQ8">Disabled</a>
+        </div>
+      </div>
+    </nav>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+      <%= yield %>
   </body>
 </html>
