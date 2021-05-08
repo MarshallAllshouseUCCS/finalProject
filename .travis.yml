@@ -13,7 +13,6 @@ script:
  
 deploy:
  provider: heroku
- #is this why my shits broken??
  api_key: ad9778f7-63b0-4717-95a2-eea160fa997a
  app: fierce-wildwood-87197
  run: "rake db:migrate"
