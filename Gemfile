@@ -79,3 +79,5 @@ gem 'bootstrap', '~> 4.6.0'
 #jQuery gem
 gem 'jquery-rails'
 
+#mini racer gem
+gem 'mini_racer'
